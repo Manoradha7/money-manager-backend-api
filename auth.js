@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 const auth = (req, res, next) => {
   try {
     const token = req.header("x-auth-token");
+  
 
     //check token is provided are not
     if (!token) {

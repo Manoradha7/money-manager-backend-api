@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 import cors from 'cors';
 
 import { UserRouter } from "./routes/user.js";
+import { transactionRouter } from './routes/transaction.js';
 
 
 const app = express();
@@ -16,6 +17,7 @@ app.use(bodyParser.json());
 
 //routes
 app.use('/users',UserRouter);
+app.use("/transaction",transactionRouter);
 
 const PORT =process.env.PORT;
 //MongoDB Url

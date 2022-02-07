@@ -128,7 +128,7 @@ router.route("/signin").post(async (req, res) => {
       .db("money")
       .collection("users")
       .updateOne({ email }, { $set: { token: token } });
-    return res.status(200).send({ Message: "Signin Succesfully" });
+    return res.status(200).send({ Message: "Signin Succesfully" ,user:{email,token}});
   } else {
     return res.status(400).send({ Message: "Invalid credentials" });
   }

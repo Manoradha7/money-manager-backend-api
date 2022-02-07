@@ -62,6 +62,18 @@ async function deleteUserById(id) {
   return await client.db('money').collection('users').deleteOne({ _id: ObjectId(id) });
 }
 
+//transaction
+async function addExpense(expenseData){
+  return await client.db('money').collection("transaction").insertOne(expenseData);
+}
+
+async function getExpense(email){
+  return await client.db('money').collection('transaction').find({email}).toArray();
+}
+async function deleteExpense(id){
+  return await client.db('money').collection('transaction').deleteOne({_id:ObjectId(id)})
+}
+
 //Mail function for sending the Mail messages
 function Mail(email, res, message) {
   const mail = nodemailer.createTransport({
@@ -99,5 +111,8 @@ export {
   getUserByEmail,
   getUserById,
   UpdateUserById,
-  deleteUserById
+  deleteUserById,
+  addExpense,
+  getExpense,
+  deleteExpense
 };
