@@ -108,7 +108,7 @@ router.route("/signin").post(async (req, res) => {
   //check data exists or not
   const data = await getUserByEmail(email);
   if (!data) {
-    return res.status(400).send({ Message: "Invalid credentials" });
+    return res.status(400).send({ Message: "Invalid credentialss" });
   }
   //check status is active or not
   const { _id, password: hashedPassword, Status } = await data;
