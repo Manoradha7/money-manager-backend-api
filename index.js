@@ -37,7 +37,7 @@ export const client = await createConnection();
 
 
 app.get('/',async(req,res)=>{
-    res.status(200).send(console.log("Welcome to Money Manger"))
+    res.status(200).send("Welcome to Money Manger");
 });
 
-app.listen(PORT,console.log("Ap running in PORT :",PORT));
+app.listen(PORT,console.log("App running in PORT :",PORT));
