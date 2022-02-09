@@ -87,7 +87,7 @@ function Mail(email, res, message) {
   const mailOptions = {
     from: process.env.email,
     to: email,
-    subject: "Mail From URL Shortener",
+    subject: "Mail From Money Manager",
     html: message,
   };
 
